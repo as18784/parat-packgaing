@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Parat Packaging</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-bg: #F5F2ED;
+            --color-surface: #EAE5DC;
+            --color-text: #1A1A1A;
+            --color-accent-green: #2C5F4A;
+            --color-accent-amber: #C17F3E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent-green);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-accent-green);
+            border-bottom-color: var(--color-accent-green);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 1.5rem;
+            height: 2px;
+            background-color: var(--color-text);
+            transition: 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(0.7rem, 0.7rem);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--color-bg);
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                padding: 0;
+                border-bottom: 1px solid var(--color-surface);
+            }
+
+            .nav-links.active {
+                max-height: 500px;
+                padding: 1rem 2rem;
+            }
+
+            .nav-links li {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--color-surface);
+            }
+
+            .nav-links a {
+                display: block;
+                padding-bottom: 0;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-accent-green);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent-amber);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--color-accent-amber);
+        }
+
+        /* Utility Classes */
+        .container-max {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--color-surface);
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        /* Section */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        /* Content */
+        .legal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent-green);
+        }
+
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .legal-content h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .legal-content p {
+            margin-bottom: 1rem;
+            color: rgba(26, 26, 26, 0.75);
+            font-size: 0.95rem;
+        }
+
+        .legal-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style: disc;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+            color: rgba(26, 26, 26, 0.75);
+            font-size: 0.95rem;
+        }
+
+        .last-updated {
+            font-size: 0.85rem;
+            color: rgba(26, 26, 26, 0.5);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-surface);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+
+            .legal-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">Parat Packaging</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Terms of Use</h1>
+    </section>
+
+    <!-- Content Section -->
+    <section class="section">
+        <div class="container-max">
+            <div class="legal-content">
+                <div class="last-updated">Last updated: January 2024</div>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using this website and the services provided by Parat Packaging ("Company," "we," "us," or "our"), you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, please do not use our website or services. We reserve the right to modify these terms at any time, and your continued use of the website constitutes your acceptance of any modifications.</p>
+
+                <h2>2. Use License</h2>
+                <p>Permission is granted to temporarily download one copy of the materials (information or software) on our website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+                <ul>
+                    <li>Modify or copy the materials</li>
+                    <li>Use the materials for any commercial purpose or for any public display</li>
+                    <li>Remove any copyright or other proprietary notations from the materials</li>
+                    <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                    <li>Attempt to decompile, reverse engineer, or disassemble any software contained on the website</li>
+                </ul>
+
+                <h2>3. Disclaimer of Warranties</h2>
+                <p>The materials on the Parat Packaging website are provided on an 'as is' basis. Parat Packaging makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                <p>We do not warrant that the website will be error-free, uninterrupted, or that any defects will be corrected. We also do not guarantee the accuracy, completeness, or reliability of any information on the website.</p>
+
+                <h2>4. Limitations of Liability</h2>
+                <p>In no event shall Parat Packaging or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Parat Packaging's website, even if Parat Packaging or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+
+                <h2>5. Accuracy of Materials</h2>
+                <p>The materials appearing on Parat Packaging's website could include technical, typographical, or photographic errors. Parat Packaging does not warrant that any of the materials on its website are accurate, complete, or current. Parat Packaging may make changes to the materials contained on its website at any time without notice.</p>
+
+                <h2>6. Materials and Content Ownership</h2>
+                <p>The materials on Parat Packaging's website, including but not limited to text, graphics, images, logos, artwork, designs, and other content ("Content"), are the property of Parat Packaging or its content suppliers and are protected by international copyright laws. You may not reproduce, distribute, or transmit the Content without our prior written permission.</p>
+
+                <h2>7. Intellectual Property Rights</h2>
+                <p>All intellectual property rights, including patents, trademarks, copyrights, and trade secrets related to our services and website are owned by Parat Packaging. By using our services, you agree not to infringe upon or violate these rights. Any unauthorized use of our intellectual property is prohibited.</p>
+
+                <h2>8. User-Generated Content</h2>
+                <p>If you submit any information, feedback, or content to Parat Packaging, you grant us a royalty-free, perpetual, irrevocable, worldwide license to use, reproduce, modify, publish, and display such content. You represent that you own or have the rights to the content you submit and that its use does not violate any third-party rights.</p>
+
+                <h2>9. Service Limitations</h2>
+                <p>Parat Packaging reserves the right to limit access to our website and services at any time. We are not responsible for any consequences that may result from service interruptions, delays, or errors. We also reserve the right to refuse or cancel orders if we suspect fraud or violation of these terms.</p>
+
+                <h2>10. Client Responsibilities and Project Terms</h2>
+                <p><strong>Project Specifications:</strong> Clients are responsible for providing accurate, complete project specifications and requirements. Parat Packaging is not liable for delays or errors resulting from incomplete or inaccurate information provided by the client.</p>
+                <p><strong>Payment Terms:</strong> Clients agree to pay for services according to the agreed-upon payment schedule. Late payments may result in suspension of services or legal action to recover outstanding amounts.</p>
+                <p><strong>Timelines:</strong> Project timelines are estimates based on the information provided. While we strive to meet agreed-upon deadlines, Parat Packaging is not liable for delays resulting from factors beyond our control, including client delays in providing feedback or approvals.</p>
+                <p><strong>Revisions:</strong> The number of revisions included in a project is as specified in the project agreement. Additional revisions may be charged separately.</p>
+
+                <h2>11. Confidentiality</h2>
+                <p>Both parties agree to maintain the confidentiality of proprietary information shared during the course of business. Parat Packaging will not disclose your business information or project details to third parties without your explicit consent, except as required by law or to trusted service providers bound by confidentiality obligations.</p>
+
+                <h2>12. Limitation of Service</h2>
+                <p>Parat Packaging provides packaging design and consultation services. We do not manufacture, produce, or deliver products unless explicitly stated in a separate service agreement. Manufacturing and delivery are typically handled through third-party partners selected by the client or recommended by us.</p>
+
+                <h2>13. Prohibited Activities</h2>
+                <p>You agree not to use the website or our services for any unlawful purpose or in any way that violates these Terms of Use. Prohibited activities include:</p>
+                <ul>
+                    <li>Harassment, threats, or defamation of any person or entity</li>
+                    <li>Posting or transmitting illegal, harmful, or offensive content</li>
+                    <li>Attempting to gain unauthorized access to our website or systems</li>
+                    <li>Transmitting viruses, malware, or any code of destructive nature</li>
+                    <li>Impersonating another person or entity</li>
+                </ul>
+
+                <h2>14. Indemnification</h2>
+                <p>You agree to indemnify and hold harmless Parat Packaging and its officers, directors, employees, and agents from any and all claims, damages, liabilities, costs, and expenses (including legal fees) arising from your use of the website, your violation of these Terms of Use, or your infringement of any intellectual property rights.</p>
+
+                <h2>15. Governing Law</h2>
+                <p>These Terms of Use are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts located in Mumbai, India.</p>
+
+                <h2>16. Dispute Resolution</h2>
+                <p>Any disputes arising from these Terms of Use or our services shall first be addressed through good-faith negotiation between the parties. If resolution cannot be reached, the dispute may be subject to arbitration or legal proceedings as determined by applicable Indian law.</p>
+
+                <h2>17. Severability</h2>
+                <p>If any provision of these Terms of Use is found to be unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.</p>
+
+                <h2>18. Entire Agreement</h2>
+                <p>These Terms of Use, along with our Privacy Policy and any separate service agreements, constitute the entire agreement between you and Parat Packaging regarding your use of our website and services. These terms supersede all prior agreements and understandings.</p>
+
+                <h2>19. Contact Information</h2>
+                <p>If you have questions or concerns regarding these Terms of Use, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> hello@paratpackaging.com</li>
+                    <li><strong>Phone:</strong> +91 98765 43210</li>
+                    <li><strong>Address:</strong> Mumbai, India</li>
+                </ul>
+
+                <h2>20. Acknowledgment</h2>
+                <p>By using this website and our services, you acknowledge that you have read these Terms of Use, understand them, and agree to be bound by them. If you do not agree with any part of these terms, please do not use our website or services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-max">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Parat Packaging</h4>
+                    <p>Your one-stop partner for premium packaging design and solutions. Building brands through thoughtful packaging.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <p>Email: <a href="mailto:hello@paratpackaging.com">hello@paratpackaging.com</a></p>
+                    <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p>Mumbai, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Parat Packaging. All rights reserved.</p>
+                <div>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
